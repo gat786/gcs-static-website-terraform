@@ -3,8 +3,9 @@ locals {
 }
 
 resource "google_storage_bucket" "website-bucket" {
-  name     = "gats-dev-static-content-bucket"
-  location = var.region
+  name          = "gats-dev-static-content-bucket"
+  location      = var.region
+  force_destroy = false
 
   website {
     main_page_suffix = "index.html"
